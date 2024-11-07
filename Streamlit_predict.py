@@ -64,7 +64,7 @@ with st.form(key='network_anamoly'):
     with col5:
         wrongfragment = int(st.slider("Wrong Fragment in connection (0/1)", 0, 1, step=1))
         urgent = int(st.slider("Urgent packet in connection (0/1)", 0, 1, step=1))
-        srvdiffhostrate = float(st.text_input("Diff Host Same Service Rate(%) (in past 2 secs)", 0))
+        srvdiffhostrate = float(st.slider("Diff Host Same Service Rate(%) (in past 2 secs)", 0.0, 1.0, step=0.01))
         protocoltype = st.selectbox("Protocol Type", ('tcp', 'udp', 'icmp'))
         isguestlogin = int(st.slider("Guest Login (0/1)", 0, 1, step=1))
 
@@ -137,7 +137,7 @@ if submit_button:
 
     # Display the DataFrame
     st.write("### Output Based on Submitted Data")
-    #st.write(str({d:data[d][0] for d in data.keys()}))
+    st.write(str({d:data[d][0] for d in data.keys()}))
     
     df=pf.outlier_treatment_test(df, outlier_dict)
 
