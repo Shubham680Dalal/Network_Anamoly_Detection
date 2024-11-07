@@ -1,0 +1,15 @@
+scikit-learn
+xgboost
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+datetime
+beautifultable
+imbalanced-learn
+statsmodels
+mlxtend
+streamlit
+flask
+pytest
