@@ -20,6 +20,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        pip install scikit-learn==1.1.2
+        pip install --upgrade scikit-learn==1.1.2
     - name: Run Test Cases
       run: pytest Pytest_run_tests.py
