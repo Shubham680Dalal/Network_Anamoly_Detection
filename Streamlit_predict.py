@@ -3,14 +3,15 @@ import pandas as pd
 import datetime
 import preprocessing_func as pf
 import pickle
+import joblib
 
 st.set_page_config(layout="wide")
 
-param_dict=pickle.load(open('best_estimator.pkl','rb'))
-param_grid=param_dict['param_grid']
+param_dict=pickle.load(open('artifacts.pkl','rb'))
+#param_grid=param_dict['param_grid']
 checkpoint_index=param_dict['checkpoint_index']  ##one already covered
 best_param_index=param_dict['best_param_index']
-best_estimator=param_dict['best_estimator']
+best_estimator=joblib.load("bestmodel.joblib")
 
 best_val_accuracy=param_dict['best_val_accuracy']
 best_val_ndcg=param_dict['best_val_ndcg']
