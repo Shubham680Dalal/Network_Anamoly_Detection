@@ -138,7 +138,7 @@ if submit_button:
 
     # Display the DataFrame
     st.write("### Output Based on Submitted Data")
-    st.write(str({d:data[d][0] for d in data.keys()}))
+    #st.write(str({d:data[d][0] for d in data.keys()}))
     
     df=pf.outlier_treatment_test(df, outlier_dict)
 
